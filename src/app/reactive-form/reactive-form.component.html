@@ -1,0 +1,28 @@
+<form action="" [formGroup]="formInfo">
+    <div formArrayName="infos">
+        <div *ngFor="let info of infos.controls; let i=index">
+            <div [formGroup]="i">
+                <div class="formControl">
+                    <label for="name">Name: </label><br>
+                    <input type="text" id="name" formControlName="name">
+                </div>
+                <div class="formControl">
+                    <label for="age">Age: </label><br>
+                    <input type="text" id="age" formControlName="age">
+                </div>
+                <div class="formControl">
+                    <label for="province">Province: </label><br>
+                    <select id="province" formControlName="province">
+                        <option value="province1" selected>province1</option>
+                        <option value="province2" selected>province2</option>
+                        <option value="province3" selected>province3</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button (click)="addInfo()">Add</button>
+    <div class="formControl">
+        <input type="submit" value="submit">
+    </div>
+</form>
