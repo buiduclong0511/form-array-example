@@ -9,7 +9,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 export class ReactiveFormComponent implements OnInit {
   
   formInfo = this.fb.group({
-    infos: this.fb.array([])
+    infoArr: this.fb.array([])
   });
 
   constructor(private fb: FormBuilder) { }
@@ -18,15 +18,29 @@ export class ReactiveFormComponent implements OnInit {
     
   }
 
-  get infos() {
-    return this.formInfo.controls["infos"] as FormArray;
+  infoArr() {
+    return this.formInfo.get("infoArr") as FormArray;
   }
 
-  addInfo() {
-    this.infos.push(this.fb.group({
+  addInfoArr() {
+    this.infoArr().push(this.fb.group({
       name: [""],
       age: [""],
-      province: [""]
-    }))
+      hobbies: this.fb.array([])
+    }));
+  }
+
+  hobbies(index: number) {
+    return this.infoArr().at(index).get("hobbies") as FormArray;
+  }
+
+  addHobby(index: number) {
+    this.hobbies(index).push(this.fb.group({
+      hobbyName: [""]
+    }));
+  }
+
+  handleSubmit() {
+    console.log(this.formInfo.value);
   }
 }

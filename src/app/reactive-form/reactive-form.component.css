@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.formContainer,
+.listHobbies {
+    border: 1px solid #ccc;
+    padding: 12px;
+}
+
+.formSecondary {
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.listHobbies {
+    margin-top: 10px;
+}
