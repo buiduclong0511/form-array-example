@@ -1,0 +1,30 @@
+<ng-container
+  *ngFor="let userItem of users"
+  [ngTemplateOutlet]="userTmpl"
+  [ngTemplateOutletContext]="{ user: userItem }"
+></ng-container>
+<ng-template #userTmpl let-user="user">
+  <div class="user" [ngStyle]="{ border: '1px solid #ccc' }">
+    <h3>ID: {{ user.id }}</h3>
+    <h4>Name: {{ user.name }}</h4>
+    <p>Age: {{ user.age }}</p>
+  </div>
+</ng-template>
+<h1 *ngIf="!users.length">Loading...</h1>
+<hr>
+<div [formGroup]="formLogin">
+    <div class="formGroup">
+        <label for="email">Email: </label><br>
+        <input type="text" id="email" formControlName="email">
+    </div>
+    <div class="formGroup">
+        <label for="password">Password: </label><br>
+        <input type="password" id="password" formControlName="password">
+    </div>
+    <div class="formGroup">
+        <button (click)="handleLogin()">Login</button>
+    </div>
+</div>
+<div>Token: {{ token }}</div>
+<hr>
+<button [disabled]="token === ''" (click)="handleGetInfo()">Get info</button>

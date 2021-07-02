@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "id": 0,
+            "name": "Bùi Đức Long",
+            "age": 21
+        },
+        {
+            "id": 1,
+            "name": "Trần Tuấn Dũng",
+            "age": 21
+        },
+        {
+            "id": 2,
+            "name": "Nguyễn Việt Dũng",
+            "age": 21
+        },
+        {
+            "id": 3,
+            "name": "Nguyễn Tuấn Dũng",
+            "age": 21
+        }
+    ]
+}
